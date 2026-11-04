@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public NavMeshSurface surface;
     public GameObject playerPrefab;
     public GameObject dualStairsPrefab;
+    public GameObject pillarPrefab;
     public GameObject moreStairsPrefab;
     public GameObject wallPrefab;
     public GameObject domePrefab;
@@ -43,11 +44,11 @@ public class Spawner : MonoBehaviour
     }
     System.Collections.IEnumerator BuildNavmeshAndSpawnEnemy()
     {
-        // Wait one frame and then build the navigation mesh for the surface before spawning flowers
+        // Wait one frame and then build the navigation mesh for the surface before spawning enemy
         yield return null;
         surface.BuildNavMesh();
 
-        yield return null; // Wait one frame for walls to show up before Instantiating rabbit to chase it 
+        yield return null; // Wait one frame for walls to show up before Instantiating enemy to chase it 
                            // Pick a spot far from the player. Here it's a random point on the NavMesh.
         Vector3 p = spawnPoint.position + new Vector3(40f, 0, 40f);
         if (UnityEngine.AI.NavMesh.SamplePosition(p, out var hit, 30f, UnityEngine.AI.NavMesh.AllAreas))

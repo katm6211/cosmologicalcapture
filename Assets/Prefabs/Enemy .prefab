@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.85, y: 1.88, z: 0.34976}
-  m_LocalScale: {x: 4.3588, y: 4.3588, z: 4.3588}
+  m_LocalScale: {x: 2.7792146, y: 2.7792146, z: 2.7792146}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -148,3 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df28b3ea71e83477e801d720f4d5f472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Seeker
+  target: {fileID: 0}
+  viewDistance: 20
+  viewAngle: 100
+  eyeHeight: 1.5
+  patrolSpeed: 50
+  chaseSpeed: 6
+  searchTime: 6
+  patrolRadius: 40
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4294967295

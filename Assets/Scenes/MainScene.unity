@@ -156,7 +156,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -365,11 +365,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e2280896f874deb9bf60b63e84e465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MazeGenerator
-  wallPrefab: {fileID: 7460576536783051957, guid: 8b54818ed96ce46b698dd710a8d196ae, type: 3}
+  wallVariants:
+  - prefab: {fileID: 7460576536783051957, guid: 8b54818ed96ce46b698dd710a8d196ae, type: 3}
+    weight: 0
+  pillarVariants:
+  - prefab: {fileID: 919132149155446097, guid: 147ea517b85b149e180d52880cf6991e, type: 3}
+    weight: 0
+  floorVariants:
+  - prefab: {fileID: 2035182558}
+    weight: 0
+  pillarChance: 0.7
+  mirror: 1
+  seed: 0
   goalPrefab: {fileID: 919132149155446097, guid: 43468378595a343e2bf631249dc09233, type: 3}
   deadEndPrefabs:
   - {fileID: 919132149155446097, guid: ca4b84cb27ebb410fba0b160a7ac67be, type: 3}
-  - {fileID: 0}
+  - {fileID: 919132149155446097, guid: 43468378595a343e2bf631249dc09233, type: 3}
   width: 15
   height: 15
   cellSize: 6
@@ -710,10 +721,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   surface: {fileID: 320290512}
   playerPrefab: {fileID: 2338267084142167290, guid: c44cb540c04c542259107e2aaa4efaf8, type: 3}
-  dualStairsPrefab: {fileID: 919132149155446097, guid: 43468378595a343e2bf631249dc09233, type: 3}
-  moreStairsPrefab: {fileID: 919132149155446097, guid: 23a6b101a72f347dc928f44ad50de3e1, type: 3}
+  dualStairsPrefab: {fileID: 7896041678978288560, guid: 77004f769a9784ac491efd89cc3d8eda, type: 3}
+  pillarPrefab: {fileID: 8073768053764670693, guid: a01200e1193874fb38a34b4f01a63354, type: 3}
+  moreStairsPrefab: {fileID: 1702441414039696223, guid: de38c7d3cdcf24b94960ec63af1eb4e8, type: 3}
   wallPrefab: {fileID: 7460576536783051957, guid: 8b54818ed96ce46b698dd710a8d196ae, type: 3}
-  domePrefab: {fileID: 919132149155446097, guid: ca4b84cb27ebb410fba0b160a7ac67be, type: 3}
+  domePrefab: {fileID: 6245680858842857439, guid: 658c95e1f58dd45e68f3c2a8938306e0, type: 3}
   moveCam: {fileID: 1560028332}
   playerCam: {fileID: 330585548}
   maze: {fileID: 353418919}
