@@ -150,12 +150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 100, y: 30, z: 100}
+  m_Center: {x: -1.52, y: 0, z: -0.8}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 72
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c9e88ca3f76c447b2b59e08f6ce22a34, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!4 &320290513
 Transform:
@@ -377,6 +377,7 @@ MonoBehaviour:
   pillarChance: 0.7
   mirror: 1
   seed: 0
+  surface: {fileID: 320290512}
   goalPrefab: {fileID: 919132149155446097, guid: 43468378595a343e2bf631249dc09233, type: 3}
   deadEndPrefabs:
   - {fileID: 919132149155446097, guid: ca4b84cb27ebb410fba0b160a7ac67be, type: 3}
@@ -719,7 +720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dece636316e37459085620e3a11244c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  surface: {fileID: 320290512}
   playerPrefab: {fileID: 2338267084142167290, guid: c44cb540c04c542259107e2aaa4efaf8, type: 3}
   dualStairsPrefab: {fileID: 7896041678978288560, guid: 77004f769a9784ac491efd89cc3d8eda, type: 3}
   pillarPrefab: {fileID: 8073768053764670693, guid: a01200e1193874fb38a34b4f01a63354, type: 3}

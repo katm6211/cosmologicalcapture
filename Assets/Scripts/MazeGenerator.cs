@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
@@ -13,7 +14,7 @@ public class MazeGenerator : MonoBehaviour
     [Range(0f, 1f)] public float pillarChance = 0.7f;
     public bool mirror = true;         // symmetrical layout
     public int seed = 0;               // 0 = random each run
-
+    public NavMeshSurface surface;
     int limitX;                        // carve only this many columns (half when mirrored)
 
     GameObject Pick(Variant[] list)
