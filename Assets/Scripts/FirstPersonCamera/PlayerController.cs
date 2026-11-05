@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     #region Keybinds
     [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
+    public Key jumpKey = Key.Space;
     #endregion
 
     void Update()
@@ -46,17 +47,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void SpeedControl() 
+    void SpeedControl()
     {
         // Chose not to limit speed at this time
     }
 
     void MyInput()
     {
-        // Calculate the movement based on pressed key WASD, and move the player accordingly
-        moveDirection = PlayerCam.Instance.orientation.forward * Input.GetAxisRaw("Vertical") + PlayerCam.Instance.orientation.right * Input.GetAxisRaw("Horizontal");
+        var kb = Keyboard.current;
+        if (kb == null) return; // no keyboard connected
+
+        // WASD -> -1, 0, or 1 on each axis
+        float horizontal = (kb.dKey.isPressed ? 1f : 0f) - (kb.aKey.isPressed ? 1f : 0f);
+        float vertical = (kb.wKey.isPressed ? 1f : 0f) - (kb.sKey.isPressed ? 1f : 0f);
+
+        moveDirection = PlayerCam.Instance.orientation.forward * vertical
+                      + PlayerCam.Instance.orientation.right * horizontal;
+
         // Jump if space pressed & you're on the ground
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (kb[jumpKey].isPressed && readyToJump && grounded)
         {
             readyToJump = false;
             Jump();
@@ -89,7 +98,7 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         // Move rigidbody by applying force at (some number) times the amplified movespeed in the direction of movedirection 
-        if (grounded) 
+        if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 3f, ForceMode.Force);
         else // If in the air, add air multiplier 
             rb.AddForce(moveDirection.normalized * moveSpeed * 3f * airMultiplier, ForceMode.Force);

@@ -84,7 +84,7 @@ MonoBehaviour:
   jumpForce: 12
   jumpCooldown: 0.25
   airMultiplier: 0.4
-  jumpKey: 32
+  jumpKey: 1
 --- !u!1 &4196593036712272508
 GameObject:
   m_ObjectHideFlags: 0

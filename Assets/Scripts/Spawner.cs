@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     #region Public Member Variables 
-    public NavMeshSurface surface;
     public GameObject playerPrefab;
     public GameObject dualStairsPrefab;
     public GameObject pillarPrefab;
@@ -46,7 +45,7 @@ public class Spawner : MonoBehaviour
     {
         // Wait one frame and then build the navigation mesh for the surface before spawning enemy
         yield return null;
-        surface.BuildNavMesh();
+        maze.surface.BuildNavMesh();
 
         yield return null; // Wait one frame for walls to show up before Instantiating enemy to chase it 
                            // Pick a spot far from the player. Here it's a random point on the NavMesh.
