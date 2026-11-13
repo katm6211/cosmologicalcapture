@@ -1,11 +1,13 @@
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
-  public void LoadScene(string sceneName)
+  public void LoadScene(string MainScene)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(MainScene);
     }
     public void QuitGame()
     {
