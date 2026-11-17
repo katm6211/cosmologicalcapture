@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (PauseManager.Instance != null && PauseManager.Instance.IsPaused) return; //  checking if the game is paused, if so, don't update the player controller
         // Raycast down from the player's center, slightly longer than half their height
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
